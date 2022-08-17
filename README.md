@@ -10,7 +10,7 @@
 - Easy use simditor & Nice codemirror editor
 - Amazing charting and visualization(echarts)
 - User-friendly operation
-- Quite beautiful：)
+- Quite beautiful :)
 
 ## Get Started
 
@@ -24,10 +24,13 @@ NODE_ENV=development npm run build:dll
 # Small language fixed
 cp node_modules/echarts/lib/langEN.js node_modules/echarts/lib/lang.js 
 # the dev-server will set proxy table to your backend
-TARGET=https://luyencode.net npm run dev
+TARGET=http://example.com npm run dev
 
 # serve with hot reload at localhost:8080
 npm run dev
+
+# now build them
+npm run build
 ```
 
 ## Screenshots
@@ -45,12 +48,12 @@ Modern browsers and Internet Explorer 10+.
 ## Attention
 
 ```
-#custom JavaScript or CSS   自定义JavaScript/CSS
+#custom JavaScript or CSS
 ./src/styles
 
-#page    修改界面
+#page
 ./src/pages
 
-#language    语言文件
+#language
 ./src/i18n
 ```
