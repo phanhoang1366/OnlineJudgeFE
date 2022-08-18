@@ -26,9 +26,6 @@ cp node_modules/echarts/lib/langEN.js node_modules/echarts/lib/lang.js
 # the dev-server will set proxy table to your backend
 TARGET=http://example.com npm run dev
 
-# serve with hot reload at localhost:8080
-npm run dev
-
 # now build them
 npm run build
 ```
