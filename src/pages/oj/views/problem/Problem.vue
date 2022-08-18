@@ -236,6 +236,8 @@
           </li>
         </ul>
       </Card>
+      <!--no need card-->
+      <!--
       <Card style="margin-top: 20px;" :padding="10" v-if="!this.contestID || OIContestRealTimePermission">
         <div slot="title" style="font-size: 16px;"><i data-v-20c86fbe="" class="ivu-icon ivu-icon-md-heart" style="color: red; font-size:1.2em;"></i>
         <span class="card-title">Ủng hộ Luyện Code</span>
@@ -248,6 +250,7 @@
         </ul>
         Nếu thấy website hữu ích, hãy chia sẻ tới bạn bè để cùng nhau học tập và tiến bộ mỗi ngày nhé!
       </Card>
+      -->
     </div>
   
     <Modal v-model="graphVisible">
