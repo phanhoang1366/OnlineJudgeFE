@@ -7,15 +7,15 @@
         <router-view></router-view>
       </transition>
       <div class="footer">
-        <!-- <p v-html="website.website_footer"></p> -->
-        <p>Website này đang được phát triển và có thể không phải là sản phẩm cuối cùng.</p>
+        <p v-html="website.website_footer"></p>
         <div class="menu" style="margin-top: 10px;">
           <a href="/ide" title="Live IDE">Live IDE</a> &nbsp;&nbsp;-&nbsp;&nbsp;
           <a href="/faq" title="Câu hỏi thường gặp">FAQ</a> &nbsp;&nbsp;-&nbsp;&nbsp;
           <a href="/judger" title="Thông tin máy chấm">Trình chấm</a> &nbsp;&nbsp;-&nbsp;&nbsp;
           <a href="/about" title="Về chúng tôi">Giới thiệu</a>
         </div>
-        <p> Powered by <a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/phanhoang1366/OnlineJudgeDeploy">OnlineJudge</a></p>
+        <p>Website này đang được phát triển và có thể không phải là sản phẩm cuối cùng.</p>
+        <p>Powered by <a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/phanhoang1366/OnlineJudgeDeploy">OnlineJudge</a></p>
       </div>
     </div>
 	<BackTop></BackTop>
