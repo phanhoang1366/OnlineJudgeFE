@@ -72,9 +72,9 @@
         </div>
         <div v-if="days" style="margin:0 auto; margin-bottom:15px; font-size:12px; text-align:center; width:160px; line-height:16px; background: transparent; color:#636e72;">Bạn đã có <strong>{{days}} </strong> chuỗi ngày học</div>
         <div style="margin-top:-10px; margin:0 auto; font-size:14px; text-align:justify; width:80%; line-height:16px; background: transparent; color:#636e72;">{{word}}</div>
-        <Button v-if="!SighinStatus" type="primary" icon="ios-alarm" @click="Sighin" long style="margin-top:20px; margin-bottom:20px; margin-left:10%; width:80%;">Ghi danh</Button>
+        <Button v-if="!SighinStatus" type="primary" icon="ios-alarm" @click="Sighin" long style="margin-top:20px; margin-bottom:20px; margin-left:10%; width:80%;">Điểm danh</Button>
         <Button v-else type="primary" icon="ios-alarm" long disabled style="margin-top:20px; margin-bottom:20px; margin-left:10%; width:80%;">
-            Ghi danh
+            Điểm danh
         </Button>
       </Panel>
       <Panel shadow style="margin-top: 37px;padding-bottom: 5px;">
@@ -91,7 +91,7 @@
         <div slot="title" style="margin-left: -10px;margin-bottom: -10px;"><Icon type="md-stats" /> {{$t('m.Statistics')}}</div>
         <ul style="margin-left: 40px;margin-bottom: 20px;">
             <li style="padding: 5px 0px;"><a href="" class="link-style" onclick="event.preventDefault();">Số lượng bài tập: {{problem_count}}</a></li>
-            <li style="padding: 5px 0px;"><a href="" class="link-style" onclick="event.preventDefault();">Tổng số bài nộp: overflow</a></li>
+            <li style="padding: 5px 0px;"><a href="" class="link-style" onclick="event.preventDefault();">Tổng số bài nộp: > 1</a></li>
             <li style="padding: 5px 0px;"><a href="" class="link-style" onclick="event.preventDefault();">Số lượng thành viên: {{infoData.user_count}}</a></li>
             <li style="padding: 5px 0px;"><a href="" class="link-style" onclick="event.preventDefault();">Số bài nộp hôm nay: {{infoData.today_submission_count}}</a></li>
         </ul>
@@ -240,13 +240,13 @@
         api.UserSighin().then(res => {
           if (res.data.data === 'Singined') {
             this.$Notice.error({
-              title: 'Ghi danh không thành công',
-              desc: 'Bạn ghi danh hôm nay rồi, hãy quay lại vào ngày mai nhé'
+              title: 'Điểm danh không thành công',
+              desc: 'Bạn điểm danh hôm nay rồi, hãy quay lại vào ngày mai nhé'
             })
             this.isSighin()
           } else {
             this.$Notice.success({
-              title: 'Ghi danh thành công',
+              title: 'Điểm danh thành công',
               desc: 'Chúc mừng bạn có thêm ' + (res.data.data.experience) + ' điểm kinh nghiệm, nhớ quay lại vào ngày mai nhé.'
             })
             this.days += 1
