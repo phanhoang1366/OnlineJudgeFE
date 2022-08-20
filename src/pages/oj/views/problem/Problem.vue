@@ -9,7 +9,7 @@
     <div id="problem-main">
       <!--problem main-->
       <Panel :padding="40" shadow>
-        <div class="report"><a title="Báo lỗi bài tập này" target="_blank" onclick="event.preventDefault();window.open('https://github.com/luyencode/comments/issues/365', '_blank');" rel="noreferrer nofollow noopener"><i class="ivu-icon ivu-icon-md-bug"></i> {{$t('m.Report')}}</a></div>
+        <div class="report"><a title="Báo lỗi bài tập này" target="_blank" onclick="event.preventDefault();window.open('https://github.com/phanhoang1366/OJComments/issues/1', '_blank');" rel="noreferrer nofollow noopener"><i class="ivu-icon ivu-icon-md-bug"></i> {{$t('m.Report')}}</a></div>
         <h2 slot="title" class="problem-title">{{problem._id}} - {{problem.title}}</h2>
         <div id="problem-content" class="markdown-body" v-katex>
           <h3 class="title">{{$t('m.Description')}}</h3>
@@ -118,7 +118,7 @@
       </Card>
       <Card :padding="20" dis-hover>
         <h3 style="font-size: 20px;">Bình luận</h3>
-        <ul style="margin-left: 30px;margin-top: 20px;">
+        <!--<ul style="margin-left: 30px;margin-top: 20px;">
           <li><a rel="nofollow noopener noreferrer" target="_blank" class="animation-text" href="https://gist.github.com/nguyenvanhieuvn/d3e5e20c44ef9d565fa3d7b9ebabfc65">Quy tắc thảo luận &#38; hướng dẫn đăng bình luận ✍️</a></li>
           <li><span style="font-weight: 600;">NÊN</span> thảo luận giải pháp 😘, <span style="font-weight: 600;">KHÔNG NÊN</span> chia sẻ code 😐</li>
           <li title="Không khuyến khích các bạn chia sẻ lời giải nha">Mọi source code đăng mà không được ẩn sẽ bị BOT xóa tự động 😭</li>
@@ -130,8 +130,8 @@
               </a>
             </span>
           </li>
-        </ul>
-        <script type="application/javascript" src="https://utteranc.es/client.js" repo="luyencode/comments" issue-term="url" theme="github-light" crossorigin="anonymous" async> </script>
+        </ul>-->
+        <script type="application/javascript" src="https://utteranc.es/client.js" repo="phanhoang1366/OJComments/comments" issue-term="url" theme="github-light" crossorigin="anonymous" async> </script>
       </Card>
     </div>
     <div id="right-column">
@@ -242,7 +242,7 @@
         <div slot="title" style="font-size: 16px;"><i data-v-20c86fbe="" class="ivu-icon ivu-icon-md-heart" style="color: red; font-size:1.2em;"></i>
         <span class="card-title">Ủng hộ Luyện Code</span>
         </div>
-        Ủng hộ 10.000đ giúp chúng tôi phát triển website hơn nữa:
+        Ủng hộ 1000.000đ giúp chúng tôi phát triển website hơn nữa:
         <ul style="margin-left: 20px;margin-bottom: 10px;">
           <li style="padding: 5px 0px;"><span style="color: green;">VPBank</span>: Nguyễn Văn Hiếu, STK: 146301158, chi nhánh Đông Đô</li>
           <li style="padding: 5px 0px;"><span style="color: green;">MoMo</span>: <a style="color: #495060;" target="_blank" href="https://me.momo.vn/nguyenvanhieu">me.momo.vn/nguyenvanhieu</a></li>

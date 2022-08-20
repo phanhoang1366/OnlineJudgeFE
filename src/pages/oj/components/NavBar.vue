@@ -104,7 +104,7 @@
       ...mapActions(['getProfile', 'changeModalStatus']),
       handleRoute (route) {
         if (route && route.indexOf('blog') >= 0) {
-          window.open('https://nguyenvanhieu.vn', '_blank')
+          window.open('about:blank', '_blank')
         } else if (route && route.indexOf('admin') < 0) {
           this.$router.push(route)
         } else {
