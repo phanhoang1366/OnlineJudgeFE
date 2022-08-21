@@ -131,7 +131,7 @@
             </span>
           </li>
         </ul>-->
-        <script type="application/javascript" src="https://utteranc.es/client.js" repo="phanhoang1366/OJComments/comments" issue-term="url" theme="github-light" crossorigin="anonymous" async> </script>
+        <script type="application/javascript" src="https://utteranc.es/client.js" repo="phanhoang1366/OJComments" issue-term="url" theme="github-light" crossorigin="anonymous" async> </script>
       </Card>
     </div>
     <div id="right-column">
