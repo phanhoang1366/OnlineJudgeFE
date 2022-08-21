@@ -50,7 +50,8 @@
   import 'codemirror/mode/php/php.js'
   import 'codemirror/mode/python/python.js'
   import 'codemirror/mode/go/go.js'
-
+  import 'codemirror/mode/pascal/pascal.js'
+  
   // active-line.js
   import 'codemirror/addon/selection/active-line.js'
 
