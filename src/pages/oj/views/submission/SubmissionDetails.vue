@@ -55,22 +55,6 @@
           </li>
         </ol>
       </Panel>
-      <div class="free-course" style="margin-top: 20px;">
-        <div class="title">Khóa học miễn phí</div>
-          <ul>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/series/cau-truc-du-lieu/" title="Cấu trúc dữ liệu">Cấu trúc dữ liệu</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/series/hoc-c-khong-kho/" class="series-508" title="Học C Không Khó">Học C Không Khó</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/go/learn-cpp/">Khóa học lập trình C++</a></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/bai-tap-c-co-loi-giai/">Kho bài tập C/C++</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/series/huong-doi-tuong-cpp/" class="series-510" title="Hướng đối tượng C++">Hướng đối tượng C++</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/series/python-khong-kho/" class="series-507" title="Python Không Khó">Python Không Khó</a></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/hoc-nhanh-python-trong-30-phut/" class="series-132" title="Python Quick Tutorial">Python Quick Tutorial</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/series/selenium-khong-kho/" class="series-358" title="Selenium không khó">Selenium không khó</a></li><li><a href="https://nguyenvanhieu.vn/series/thu-vien-flask/" class="series-131" title="Thư viện Flask">Thư viện Flask</a></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/series/thuc-hanh-sql/" class="series-307" title="Thực hành SQL">Thực hành SQL</a></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/hoc-lap-trinh-java/" class="series-126" title="Tự học lập trình Java">Tự học lập trình Java</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/series/tu-hoc-lap-trinh-javascript/" class="series-127" title="Tự học lập trình Javascript">Tự học Javascript</a></li>
-            </ul>
-          </div>
     </Col>
   </Row>
 
