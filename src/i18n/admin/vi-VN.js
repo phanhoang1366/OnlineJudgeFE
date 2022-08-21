@@ -18,6 +18,10 @@ export const m = {
   Contest_List: 'Contest List',
   Create_Contest: 'Tạo Contest',
   AboutUs: 'Về chúng tôi',
+  // NavBar.vue
+  App: 'App',
+  IDE: 'IDE',
+  Forum: 'Forum',
   // User.vue
   User_User: 'Tài khoản',
   Import_User: 'Import User',
