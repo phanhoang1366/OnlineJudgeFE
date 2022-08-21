@@ -262,14 +262,14 @@
       },
       submitforumpost (model) {
         if (this.isSuperAdmin === false) {
-          this.$error('User does\'t have permission')
+          this.$error('User không có đủ quyền')
           return
         }
         if (this.website.allow_forum_post === false) {
           if (model === 2) { this.forumpost.is_top = !this.forumpost.is_top }
           if (model === 3) { this.forumpost.is_light = !this.forumpost.is_light }
           if (model === 4) { this.forumpost.is_nice = !this.forumpost.is_nice }
-          this.$error(this.website.website_name + ' does\'t allow to post')
+          this.$error(this.website.website_name + ' không đủ quyền để đăng')
           return
         }
         let data = {
@@ -299,11 +299,11 @@
       },
       submitForumReply () {
         if (this.forumreply.content.trim() === '') {
-          this.$error('Reply can not be empty!')
+          this.$error('Reply không thể để trống!')
           return
         }
         if (this.website.allow_forum_reply === false) {
-          this.$error(this.website.website_name + ' does\'t allow to reply')
+          this.$error(this.website.website_name + ' không cho phép reply.')
           return
         }
         this.submitting = true
