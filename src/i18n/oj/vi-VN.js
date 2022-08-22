@@ -160,7 +160,7 @@ export const m = {
   OI_Rank: 'OI Rank',
   About: 'Thông tin',
   AboutUs: 'Về chúng tôi',
-  App: 'APP',
+  App: 'App',
   IDE: 'IDE',
   Forum: 'Thảo luận',
   Forum_List: 'Danh sách bài đăng',
