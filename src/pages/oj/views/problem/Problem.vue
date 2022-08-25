@@ -118,9 +118,9 @@
       </Card>
       <Card :padding="20" dis-hover>
         <h3 style="font-size: 20px;">Bình luận</h3>
-        <!--<ul style="margin-left: 30px;margin-top: 20px;">
-          <li><a rel="nofollow noopener noreferrer" target="_blank" class="animation-text" href="https://gist.github.com/nguyenvanhieuvn/d3e5e20c44ef9d565fa3d7b9ebabfc65">Quy tắc thảo luận &#38; hướng dẫn đăng bình luận ✍️</a></li>
-          <li><span style="font-weight: 600;">NÊN</span> thảo luận giải pháp 😘, <span style="font-weight: 600;">KHÔNG NÊN</span> chia sẻ code 😐</li>
+        <ul style="margin-left: 30px;margin-top: 20px;">
+          <li><a rel="nofollow noopener noreferrer" target="_blank" class="animation-text" href="https://github.com/phanhoang1366/OJComments/blob/main/Comments_Rule.md">Quy tắc thảo luận &#38; hướng dẫn đăng bình luận ✍️</a></li>
+          <!--<li><span style="font-weight: 600;">NÊN</span> thảo luận giải pháp 😘, <span style="font-weight: 600;">KHÔNG NÊN</span> chia sẻ code 😐</li>
           <li title="Không khuyến khích các bạn chia sẻ lời giải nha">Mọi source code đăng mà không được ẩn sẽ bị BOT xóa tự động 😭</li>
           <li title="BOT của Luyện Code cũng sẽ thường xuyên kiểm duyệt nha"><span style="font-weight: 600;">KHÔNG NÊN</span> để lộ thông tin cá nhân (SĐT, email, Facebook, ...)</li>
           <li>Tham gia thảo luận bài tập tại
@@ -129,8 +129,8 @@
                 <img alt="Discord" src="https://img.shields.io/discord/879371214806712340?label=Discord&logo=Discord">
               </a>
             </span>
-          </li>
-        </ul>-->
+          </li>-->
+        </ul>
         <script type="application/javascript" src="https://utteranc.es/client.js" repo="phanhoang1366/OJComments" issue-term="url" theme="github-light" crossorigin="anonymous" async> </script>
       </Card>
     </div>
