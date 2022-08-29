@@ -34,13 +34,26 @@ jobs:
       id: date-time
       run: echo ::set-output name=date-time::$(date +'%Y.%m.%d')
       
+    - name: Upload the build
+      uses: actions/upload-artifact@v3
+      with:
+        name: dist
+        path: dist.zip
+          
     outputs:
+    
       date-time: ${{ steps.date-time.outputs.date-time }}
     
   release:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
+    
+      - name: Download zipped build
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
@@ -50,3 +63,4 @@ jobs:
             OnlineJudge Front-end automatic build on ${{ needs.build.outputs.date-time }}
             Using Github Actions
           files: dist.zip
+
