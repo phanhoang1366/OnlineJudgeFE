@@ -5,7 +5,7 @@ name: Build on push
 
 on:
   push:
-    branches: [ "master--tnue" ]
+    branches: [ "master-tnue" ]
 
 jobs:
   build:
