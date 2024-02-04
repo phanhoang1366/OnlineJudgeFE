@@ -140,19 +140,6 @@
       </el-form>
       <save @click.native="saveWebsiteConfig" style="margin-top: 20px;"></save>
     </Panel>
-
-    <Panel :title="'About Us Config'">
-      <div>
-        <el-form label-position="top">
-          <el-form-item>
-            <Simditor v-model="aboutus.content"></Simditor>
-          </el-form-item>
-        </el-form>
-        <span slot="footer" class="dialog-footer">
-          <save type="primary" @click.native="saveAboutUs"></save>
-        </span>
-      </div>
-    </Panel>
   </div>
 </template>
 
@@ -179,14 +166,7 @@
           email: 'email@example.com',
           tls: true
         },
-        websiteConfig: {},
-        // 当前关于我们id
-        currentAboutUsId: 1,
-        aboutus: {
-          id: 1,
-          content: ''
-        },
-        onit: false
+        websiteConfig: {}
       }
     },
     mounted () {
@@ -200,14 +180,6 @@
       })
       api.getWebsiteConfig().then(res => {
         this.websiteConfig = res.data.data
-      }).catch(() => {
-      })
-      api.getAboutUsList().then(res => {
-        if (res.data.data) {
-          this.aboutus = res.data.data
-        } else {
-          this.onit = true
-        }
       }).catch(() => {
       })
     },

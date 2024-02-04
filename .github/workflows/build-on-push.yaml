@@ -63,6 +63,6 @@ jobs:
           tag_name: v${{ needs.build.outputs.date-time }}
           body: |
             OnlineJudge Front-end automatic build on ${{ needs.build.outputs.date-time }}
-            Using Github Actions
+            Using Github Actions (TNUE only)
           files: dist.zip
-
+          prerelease: true

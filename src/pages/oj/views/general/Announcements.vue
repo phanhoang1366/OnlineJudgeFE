@@ -62,8 +62,8 @@
         </Row>
     </Col>
     <Col :span="5" v-if="!isContest" >
-      <Panel shadow>
-        <div style="font-size:14px; text-align:center; width:100%; line-height:16px; background: transparent; color:#636e72;">Rủ bạn bè vào cày rank thôi nào!</div>
+      <Panel shadow style="padding-bottom: 45px;">
+        <div style="font-size:14px; text-align:center; width:100%; background: transparent; color:#636e72;">Rủ bạn bè vào cày bài thôi nào!</div>
         <div class="today">
           <div class="nowWeek">{{nowWeek}}</div>
           <div class="nowDate">
@@ -72,10 +72,6 @@
         </div>
         <div v-if="days" style="margin:0 auto; margin-bottom:15px; font-size:12px; text-align:center; width:160px; line-height:16px; background: transparent; color:#636e72;">Bạn đã có <strong>{{days}} </strong> chuỗi ngày học</div>
         <div style="margin-top:-10px; margin:0 auto; font-size:14px; text-align:justify; width:80%; line-height:16px; background: transparent; color:#636e72;">{{word}}</div>
-        <Button v-if="!SighinStatus" type="primary" icon="ios-alarm" @click="Sighin" long style="margin-top:20px; margin-bottom:20px; margin-left:10%; width:80%;">Điểm danh</Button>
-        <Button v-else type="primary" icon="ios-alarm" long disabled style="margin-top:20px; margin-bottom:20px; margin-left:10%; width:80%;">
-            Điểm danh
-        </Button>
       </Panel>
       <Panel shadow style="margin-top: 37px;padding-bottom: 5px;">
         <div slot="title" style="margin-left: -10px;margin-bottom: -10px;"><Icon type="ios-link" /> {{$t('m.Similar_Site')}}</div>
