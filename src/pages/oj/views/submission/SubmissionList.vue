@@ -87,34 +87,21 @@
             title: this.$i18n.t('m.Author'),
             align: 'center',
             render: (h, params) => {
-              if (params.row.title) {
-                return h('a', {
-                  style: {
-                    'display': 'inline-block',
-                    'margin-left': '5px',
-                    'font-weight': 600,
-                    'color': params.row.title_color
-                  },
-                  attrs: {
-                    'title': params.row.title + ' ' + params.row.username,
-                    'href': '/user-home?username=' + params.row.username
+              return h('a', {
+                style: {
+                  'display': 'inline-block',
+                  'max-width': '150px'
+                },
+                on: {
+                  click: () => {
+                    this.$router.push(
+                      {
+                        name: 'user-home',
+                        query: {username: params.row.username}
+                      })
                   }
-                }, params.row.username)
-              } else {
-                return h('a', {
-                  style: {
-                    'display': 'inline-block',
-                    'max-width': '150px',
-                    'margin-left': '5px',
-                    'font-weight': 600,
-                    'color': USER_GRADE[params.row.grade].color
-                  },
-                  attrs: {
-                    'title': USER_GRADE[params.row.grade].name + ' ' + params.row.username,
-                    'href': '/user-home?username=' + params.row.username
-                  }
-                }, params.row.username)
-              }
+                }
+              }, params.row.username)
             }
           },
           {
