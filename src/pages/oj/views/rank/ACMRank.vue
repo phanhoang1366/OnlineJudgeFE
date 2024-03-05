@@ -19,7 +19,7 @@
   import api from '@oj/api'
   import Pagination from '@oj/components/Pagination'
   import utils from '@/utils/utils'
-  import { RULE_TYPE, USER_GRADE } from '@/utils/constants'
+  import { RULE_TYPE } from '@/utils/constants'
 
   export default {
     name: 'acm-rank',
@@ -45,49 +45,21 @@
             title: this.$i18n.t('m.User_User'),
             align: 'center',
             render: (h, params) => {
-              if (params.row.title) {
-                return h('a', {
-                  style: {
-                    'display': 'inline-block',
-                    'max-width': '200px',
-                    'font-weight': 600,
-                    'color': params.row.title_color
-                  },
-                  attrs: {
-                    'title': params.row.title + ' ' + params.row.user.username
-                  },
-                  on: {
-                    click: () => {
-                      this.$router.push(
-                        {
-                          name: 'user-home',
-                          query: {username: params.row.user.username}
-                        })
-                    }
+              return h('a', {
+                style: {
+                  'display': 'inline-block',
+                  'max-width': '200px'
+                },
+                on: {
+                  click: () => {
+                    this.$router.push(
+                      {
+                        name: 'user-home',
+                        query: {username: params.row.user.username}
+                      })
                   }
-                }, params.row.user.username)
-              } else {
-                return h('a', {
-                  style: {
-                    'display': 'inline-block',
-                    'max-width': '200px',
-                    'font-weight': 600,
-                    'color': USER_GRADE[params.row.grade].color
-                  },
-                  attrs: {
-                    'title': USER_GRADE[params.row.grade].name + ' ' + params.row.user.username
-                  },
-                  on: {
-                    click: () => {
-                      this.$router.push(
-                        {
-                          name: 'user-home',
-                          query: {username: params.row.user.username}
-                        })
-                    }
-                  }
-                }, params.row.user.username)
-              }
+                }
+              }, params.row.user.username)
             }
           },
           {

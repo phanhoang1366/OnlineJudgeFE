@@ -56,7 +56,7 @@
 <script>
   import { mapGetters } from 'vuex'
   import api from '@oj/api'
-  import { RULE_TYPE, JUDGE_STATUS, USER_TYPE, USER_GRADE } from '@/utils/constants'
+  import { RULE_TYPE, JUDGE_STATUS, USER_TYPE } from '@/utils/constants'
   import utils from '@/utils/utils'
   import time from '@/utils/time'
   import Pagination from '@/pages/oj/components/Pagination'
@@ -185,7 +185,6 @@
     },
     mounted () {
       this.init()
-      this.getRankData()
       this.JUDGE_STATUS = Object.assign({}, JUDGE_STATUS)
       // 去除submitting的状态 和 两个
       delete this.JUDGE_STATUS['9']
@@ -205,16 +204,6 @@
         }
         this.routeName = this.$route.name
         this.getSubmissions()
-      },
-      getRankData () {
-        api.getUserRank(0, this.rankLimit, RULE_TYPE.ACM).then(res => {
-          this.dataRank = res.data.data.results
-          for (let i in this.dataRank) {
-            this.dataRank[i]['color'] = USER_GRADE[this.dataRank[i].grade].color
-            this.dataRank[i]['title'] = USER_GRADE[this.dataRank[i].grade].name
-          }
-        }).catch(() => {
-        })
       },
       buildQuery () {
         return {

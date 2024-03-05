@@ -62,7 +62,7 @@
 
 <script>
   import api from '@oj/api'
-  import {RULE_TYPE, JUDGE_STATUS, USER_GRADE} from '@/utils/constants'
+  import {RULE_TYPE, JUDGE_STATUS} from '@/utils/constants'
   import utils from '@/utils/utils'
   import Highlight from '@/pages/oj/components/Highlight'
 
@@ -124,7 +124,6 @@
     },
     mounted () {
       this.getSubmission()
-      this.getRankData()
     },
     methods: {
       getSubmission () {
@@ -168,16 +167,6 @@
           this.submission['contest'] = this.$route.query.contest
         }, () => {
           this.loading = false
-        })
-      },
-      getRankData () {
-        api.getUserRank(0, this.rankLimit, RULE_TYPE.ACM).then(res => {
-          this.dataRank = res.data.data.results
-          for (let i in this.dataRank) {
-            this.dataRank[i]['color'] = USER_GRADE[this.dataRank[i].grade].color
-            this.dataRank[i]['title'] = USER_GRADE[this.dataRank[i].grade].name
-          }
-        }).catch(() => {
         })
       },
       shareSubmission (shared) {

@@ -2,7 +2,7 @@ import types from '../types'
 import api from '@oj/api'
 import storage from '@/utils/storage'
 import i18n from '@/i18n'
-import { STORAGE_KEY, USER_TYPE, PROBLEM_PERMISSION, USER_GRADE } from '@/utils/constants'
+import { STORAGE_KEY, USER_TYPE, PROBLEM_PERMISSION } from '@/utils/constants'
 
 const state = {
   profile: {}

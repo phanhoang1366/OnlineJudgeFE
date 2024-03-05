@@ -108,8 +108,6 @@
         api.getUserInfo(this.username).then(res => {
           this.changeDomTitle({title: res.data.data.user.username})
           this.profile = res.data.data
-          this.color = USER_GRADE[res.data.data.grade].color
-          this.gradename = USER_GRADE[res.data.data.grade].name
           this.getUserProblems()
           let registerTime = time.utcToLocal(this.profile.user.create_time, 'YYYY-MM-D')
           console.log('The guy registered at ' + registerTime + '.')
