@@ -27,8 +27,8 @@ jobs:
     - run: npm cache clear --force
     - run: npm config set strict-ssl false # This is because taobao SSL is currenty expired, and I need a PoC
     - run: npm i
-    - run: NODE_ENV=production npm run build:dll
-    - run: npm run build --if-present
+    - run: npm run build:dll
+    - run: NODE_ENV=dev npm run build --if-present --dev --configuration=dev
     - run: find dist/ -type f -name "*.map" -delete
     - run: zip -9 -r dist.zip dist
     
