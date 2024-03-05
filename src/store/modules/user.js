@@ -11,8 +11,6 @@ const state = {
 const getters = {
   user: state => state.profile.user || {},
   profile: state => state.profile,
-  color: state => USER_GRADE[state.profile.grade].color,
-  gradename: state => USER_GRADE[state.profile.grade].name,
   isAuthenticated: (state, getters) => {
     return !!getters.user.id
   },
