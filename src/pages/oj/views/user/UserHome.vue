@@ -7,8 +7,6 @@
       <div v-if="profile.user"  :title="profile.real_name">
         <p style="margin-top: -10px">
           <span v-if="profile.user" class="emphasis">
-            <Tag v-if="profile.user.title" :color="profile.user.title_color">{{ profile.user.title }}</Tag>
-            <Tag v-else :color="color">{{ gradename }}</Tag>
             <span v-if="profile.real_name">{{profile.real_name}}</span>
             <span v-else>{{profile.user.username}}</span>
           </span>
@@ -83,7 +81,6 @@
   import { mapActions } from 'vuex'
   import time from '@/utils/time'
   import api from '@oj/api'
-  import { USER_GRADE } from '@/utils/constants'
 
   export default {
     data () {
@@ -95,7 +92,6 @@
         tried_problems: [],
         count_tried: 0,
         color: '',
-        gradename: ''
       }
     },
     mounted () {
