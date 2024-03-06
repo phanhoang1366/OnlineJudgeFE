@@ -87,49 +87,21 @@
             minWidth: 100,
             fixed: 'left',
             render: (h, params) => {
-              if (params.row.title) {
-                return h('a', {
-                  style: {
-                    'display': 'inline-block',
-                    'max-width': '150px',
-                    'font-weight': 600,
-                    'color': params.row.title_color
-                  },
-                  attrs: {
-                    'title': params.row.title + ' ' + params.row.user.username
-                  },
-                  on: {
-                    click: () => {
-                      this.$router.push(
-                        {
-                          name: 'user-home',
-                          query: {username: params.row.user.username}
-                        })
-                    }
+              return h('a', {
+                style: {
+                  display: 'inline-block',
+                  'max-width': '150px'
+                },
+                on: {
+                  click: () => {
+                    this.$router.push(
+                      {
+                        name: 'user-home',
+                        query: {username: params.row.user.username}
+                      })
                   }
-                }, params.row.user.username)
-              } else {
-                return h('a', {
-                  style: {
-                    'display': 'inline-block',
-                    'max-width': '150px',
-                    'font-weight': 600,
-                    'color': USER_GRADE[params.row.grade].color
-                  },
-                  attrs: {
-                    'title': USER_GRADE[params.row.grade].name + ' ' + params.row.user.username
-                  },
-                  on: {
-                    click: () => {
-                      this.$router.push(
-                        {
-                          name: 'user-home',
-                          query: {username: params.row.user.username}
-                        })
-                    }
-                  }
-                }, params.row.user.username)
-              }
+                }
+              }, params.row.user.username)
             }
           },
           {
