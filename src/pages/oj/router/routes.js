@@ -5,22 +5,16 @@ import {
   Announcements,
   ApplyResetPassword,
   FAQ,
-  AboutUs,
   Home,
   Logout,
   NotFound,
   OIRank,
-  ExperienceRank,
   Problem,
   ProblemList,
   ResetPassword,
   SubmissionDetails,
   SubmissionList,
-  UserHome,
-  IDE,
-  Forum,
-  ForumList,
-  ForumPost
+  UserHome
 } from '../views'
 
 import * as Contest from '@oj/views/contest'
@@ -132,12 +126,6 @@ export default [
     component: OIRank
   },
   {
-    name: 'experience-rank',
-    path: '/experience-rank',
-    meta: {title: 'Bảng xếp hạng Điểm kinh nghiệm'},
-    component: ExperienceRank
-  },
-  {
     name: 'user-home',
     path: '/user-home',
     component: UserHome,
@@ -184,36 +172,6 @@ export default [
     name: 'faq',
     meta: {title: 'Câu hỏi thường gặp (FAQ)'},
     component: FAQ
-  },
-  {
-    path: '/about',
-    name: 'AboutUs',
-    meta: {title: 'Về chúng tôi'},
-    component: AboutUs
-  },
-  {
-    path: '/ide',
-    name: 'IDE',
-    meta: {title: 'Live IDE'},
-    component: IDE
-  },
-  {
-    name: 'Forum-list',
-    path: '/forum',
-    meta: {title: 'Danh sách thảo luận'},
-    component: ForumList
-  },
-  {
-    name: 'Forum-post',
-    path: '/post',
-    meta: {title: 'Tạo thảo luận'},
-    component: ForumPost
-  },
-  {
-    name: 'Forum-details',
-    path: '/forum/:forumpostID',
-    meta: {title: 'Chi tiết thảo luận'},
-    component: Forum
   },
   {
     name: 'NotFound',
