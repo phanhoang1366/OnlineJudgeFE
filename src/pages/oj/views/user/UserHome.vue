@@ -91,7 +91,7 @@
         count_ac: 0,
         tried_problems: [],
         count_tried: 0,
-        color: '',
+        color: ''
       }
     },
     mounted () {
