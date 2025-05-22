@@ -71,7 +71,7 @@ export const m = {
   Check_It: 'Check It',
   // ACMRank.vue
   ACM_Ranklist: 'Bảng xếp hạng ACM',
-  mood: 'mood',
+  mood: 'Mood',
   AC: 'Bài đúng',
   AC_Rate: 'Tỉ lệ đạt',
   // Announcements.vue
