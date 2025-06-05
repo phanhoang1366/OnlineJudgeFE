@@ -567,10 +567,10 @@
         }
         if (this.problem.rule_type === 'OI') {
           for (let item of this.problem.test_case_score) {
-              if (item.score <= 0) {
-                this.$error('Invalid test case score')
-                return
-              }
+            if (item.score <= 0) {
+              this.$error('Invalid test case score')
+              return
+            }
           }
         }
         this.problem.languages = this.problem.languages.sort()
