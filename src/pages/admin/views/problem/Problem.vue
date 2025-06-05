@@ -567,15 +567,10 @@
         }
         if (this.problem.rule_type === 'OI') {
           for (let item of this.problem.test_case_score) {
-            try {
-              if (parseInt(item.score) <= 0) {
+              if (item.score <= 0) {
                 this.$error('Invalid test case score')
                 return
               }
-            } catch (e) {
-              this.$error('Test case score must be an integer')
-              return
-            }
           }
         }
         this.problem.languages = this.problem.languages.sort()
