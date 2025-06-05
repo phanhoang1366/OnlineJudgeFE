@@ -567,8 +567,17 @@
         }
         if (this.problem.rule_type === 'OI') {
           for (let item of this.problem.test_case_score) {
-            if (item.score <= 0) {
-              this.$error('Invalid test case score')
+            try {
+              if (String(item.score).split(".")[1]?.length > 2) {
+                this.$error('Test case score must have at most 2 decimal places.')
+                return
+              }
+              if (parseFloat(item.score) <= 0) {
+                this.$error('Invalid test case score')
+                return
+              }
+            } catch (e) {
+              this.$error('Test case score must be a float')
               return
             }
           }
