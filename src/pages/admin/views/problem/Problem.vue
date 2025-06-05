@@ -568,7 +568,8 @@
         if (this.problem.rule_type === 'OI') {
           for (let item of this.problem.test_case_score) {
             try {
-              if (String(item.score).split(".")[1]?.length > 2) {
+              const decimalPart = String(item.score).split(".")[1];
+              if (decimalPart && decimalPart.length > 2) {
                 this.$error('Test case score must have at most 2 decimal places.')
                 return
               }
