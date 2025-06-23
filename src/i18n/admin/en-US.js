@@ -117,6 +117,9 @@ export const m = {
   Contest_Rule_Type: 'Contest Rule Type',
   Real_Time_Rank: 'Real Time Rank',
   Contest_Status: 'Status',
+  Whitelist_Usernames: 'Whitelist Usernames',
+  Edit_Whitelist: 'Edit Whitelist',
+  Whitelist_Upload_XLSX: 'You can upload bulk usernames in various formats, such as XLSX or CSV, to the whitelist.',
   Allowed_IP_Ranges: 'Allowed IP Ranges',
   CIDR_Network: 'CIDR Network',
   // Dashboard.vue

@@ -127,6 +127,7 @@ export const m = {
   Creator: 'Creator',
   Public: 'Public',
   Password_Protected: 'Password Protected',
+  Whitelist_Contest: 'Whitelist Contest',
   // ContestList.vue
   Rule: 'Rule',
   OI: 'OI',

@@ -61,6 +61,17 @@
             </el-form-item>
           </el-col>
           <el-col :span="24">
+            <!-- Whitelist Usernames -->
+            <el-form-item :label="$t('m.Whitelist_Usernames')">
+              <el-switch 
+                v-model="contest.whitelist_enabled">
+              </el-switch>
+              <el-button v-if="contest.whitelist_enabled" type="primary" @click="openDialogIfEnabled" style="margin-left: 10px;">
+                {{ $t('m.Edit_Whitelist') }}
+              </el-button>
+            </el-form-item>
+          </el-col>
+          <el-col :span="24">
             <el-form-item :label="$t('m.Allowed_IP_Ranges')">
               <div v-for="(range, index) in contest.allowed_ip_ranges" :key="index">
                 <el-row :gutter="20" style="margin-bottom: 15px">
@@ -78,6 +89,42 @@
         </el-row>
       </el-form>
       <save @click.native="saveContest"></save>
+      <el-dialog :visible.sync="dialogVisible" :title="$t('m.Edit_Whitelist')" width="50%">
+        <el-form>
+          <el-form-item :label="$t('m.Whitelist_Upload_XLSX')">
+            <el-alert
+              title="Note: Uploading a whitelist will replace the existing one."
+              type="warning"
+              show-icon>
+            </el-alert>
+            <div style="margin: 10px 0; display: flex; align-items: center;">
+              <el-upload
+                ref="upload"
+                action="/api/parse-whitelist"
+                name="file"
+                :on-success="uploadSucceeded"
+                :on-error="uploadFailed"
+                :accept="'.xlsx,.xls,.csv,.ods'"
+                :with-credentials="true"
+                :headers="uploadHeaders"
+              >
+                <el-button size="small" type="primary" icon="el-icon-fa-upload">Upload a spreadsheet...</el-button>
+              </el-upload>
+              <el-button type="primary" size="mini" icon="el-icon-download" @click="downloadSample" style="margin-left: 10px;">
+                Sample
+              </el-button>
+            </div>
+          </el-form-item>
+          <el-table
+            v-if="contest.whitelist_enabled"
+            :data="contest.whitelistNames"
+            :key="whitelistTableKey"
+            style="width: 100%">
+            <el-table-column prop="username" :label="$t('m.Username')"></el-table-column>
+            <el-table-column prop="real_name" :label="$t('m.User_Real_Name')"></el-table-column>
+          </el-table>
+        </el-form>
+      </el-dialog>
     </Panel>
   </div>
 </template>
@@ -95,6 +142,12 @@
       return {
         title: 'Create Contest',
         disableRuleType: false,
+        dialogVisible: false,
+        menuToggle: false,
+        whitelistTableKey: 0,
+        uploadHeaders: {
+          'X-CSRFToken': this.getCSRFCookie()
+        },
         contest: {
           title: '',
           description: '',
@@ -104,6 +157,9 @@
           password: '',
           real_time_rank: true,
           visible: true,
+          whitelist_enabled: false,
+          whitelist_users: [], // Used for storing user IDs
+          whitelistNames: [], // Rendered in the dialog
           allowed_ip_ranges: [{
             value: ''
           }]
@@ -134,6 +190,39 @@
         if (index !== -1) {
           this.contest.allowed_ip_ranges.splice(index, 1)
         }
+      },
+      openDialogIfEnabled () {
+        if (this.contest.whitelist_enabled) {
+          this.dialogVisible = true
+        }
+      },
+      uploadSucceeded (response) {
+        if (response.error) {
+          this.$error(response.data)
+          return
+        }
+        if (!Array.isArray(response)) {
+          this.$error(this.$t('m.Invalid_Whitelist_Format'))
+          return
+        }
+        const data = response
+        this.contest.whitelistNames = data.map(item => ({
+          username: item.user && item.user.username ? item.user.username : '',
+          real_name: item.real_name || (item.user && item.user.real_name) || ''
+        }))
+        this.contest.whitelist_users = data.map(item => item.user && item.user.id ? item.user.id : null).filter(id => id !== null)
+        this.whitelistTableKey++
+        this.$message.success(this.$t('m.Upload_Success'))
+      },
+      uploadFailed () {
+        this.$error(this.$t('m.Upload_Failed'))
+      },
+      getCSRFCookie () {
+        const match = document.cookie.match(/(?:^|; )csrftoken=([^;]*)/)
+        return match ? decodeURIComponent(match[1]) : ''
+      },
+      downloadSample () {
+        window.open('/public/xlsx/users.xlsx', '_blank')
       }
     },
     mounted () {
@@ -151,8 +240,21 @@
           }
           data.allowed_ip_ranges = ranges
           this.contest = data
+          this.whitelistTableKey++
         }).catch(() => {
         })
+      }
+    },
+    watch: {
+      'contest.password' (newVal) {
+        if (newVal && this.contest.whitelist_enabled) {
+          this.contest.whitelist_enabled = false
+        }
+      },
+      'contest.whitelist_enabled' (newVal) {
+        if (newVal && this.contest.password) {
+          this.contest.password = ''
+        }
       }
     }
   }

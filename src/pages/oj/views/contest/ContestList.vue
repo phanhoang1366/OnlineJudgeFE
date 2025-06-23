@@ -46,6 +46,9 @@
               <a class="entry" @click.stop="goContest(contest)">
                 {{contest.title}}
               </a>
+              <template v-if="contest.contest_type === 'Whitelist Contest'">
+                <Icon type="ios-people" color="#19be6b" size="20" style="margin-left: 6px;" />
+              </template>
               <template v-if="contest.contest_type != 'Public'">
                 <Icon type="ios-lock-outline" size="20"></Icon>
               </template>
