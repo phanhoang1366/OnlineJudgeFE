@@ -99,7 +99,8 @@ export const RULE_TYPE = {
 
 export const CONTEST_TYPE = {
   PUBLIC: 'Public',
-  PRIVATE: 'Password Protected'
+  PRIVATE: 'Password Protected',
+  WHITELIST: 'Whitelist Contest'
 }
 
 export const USER_TYPE = {

@@ -68,7 +68,7 @@ const getters = {
     return !rootGetters.isAuthenticated
   },
   passwordFormVisible: (state, getters) => {
-    return state.contest.contest_type !== CONTEST_TYPE.PUBLIC && !state.access && !getters.isContestAdmin
+    return state.contest.contest_type !== CONTEST_TYPE.PUBLIC && !state.access && !getters.isContestAdmin && state.contest.contest_type !== CONTEST_TYPE.WHITELIST
   },
   contestStartTime: (state) => {
     return moment(state.contest.start_time)
@@ -141,7 +141,7 @@ const actions = {
         let contest = res.data.data
         commit(types.CHANGE_CONTEST, {contest: contest})
         commit(types.NOW, {now: moment(contest.now)})
-        if (contest.contest_type === CONTEST_TYPE.PRIVATE) {
+        if (contest.contest_type === CONTEST_TYPE.PRIVATE || contest.contest_type === CONTEST_TYPE.WHITELIST) {
           dispatch('getContestAccess')
         }
       }, err => {
