@@ -121,6 +121,7 @@ export const m = {
   Contest_Rule_Type: 'Contest Rule Type',
   Real_Time_Rank: 'Rank thời gian thực',
   Contest_Status: 'Trạng thái',
+  Public_Ranking: 'Rank công khai',
   Whitelist_Usernames: 'Whitelist Usernames',
   //   Whitelist_Upload_XLSX: 'You can upload bulk usernames in various formats, such as XLSX or CSV, to the whitelist.',
   Whitelist_Upload_XLSX: 'Bạn có thể tải lên hàng loạt tên người dùng ở các định dạng khác nhau vào danh sách trắng.',

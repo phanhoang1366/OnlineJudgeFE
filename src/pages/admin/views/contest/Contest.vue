@@ -60,7 +60,17 @@
               </el-switch>
             </el-form-item>
           </el-col>
-          <el-col :span="24">
+          <el-col :span="8">
+            <!-- Public ranking -->
+            <el-form-item :label="$t('m.Public_Ranking')">
+              <el-switch 
+                v-model="contest.public_ranking"
+                active-color="#13ce66"
+                inactive-color="#ff4949">
+              </el-switch>
+            </el-form-item>
+          </el-col>
+          <el-col :span="16">
             <!-- Whitelist Usernames -->
             <el-form-item :label="$t('m.Whitelist_Usernames')">
               <el-switch 
@@ -157,6 +167,7 @@
           password: '',
           real_time_rank: true,
           visible: true,
+          public_ranking: false,
           whitelist_enabled: false,
           whitelist_users: [], // Used for storing user IDs
           whitelistNames: [], // Rendered in the dialog
